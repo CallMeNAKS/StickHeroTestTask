@@ -2,18 +2,20 @@
 
 namespace CodeBase.Platform
 {
-    [CreateAssetMenu(menuName = "Platform", fileName = "PlatformConfig", order = 0)]
+    [CreateAssetMenu(menuName = "Config/Platform", fileName = "PlatformConfig", order = 0)]
     public class PlatformConfig : ScriptableObject
     {
         [SerializeField] private float _minSize;
         [SerializeField] private float _maxSize;
         [SerializeField] private float _minRange;
         [SerializeField] private float _maxRange;
+        [SerializeField] private Platform _platformPrefab;
         
         
         public float MinSize => _minSize;
         public float MaxSize => _maxSize;
         public float MinRange => _minRange;
         public float MaxRange => _maxRange;
+        public Platform PlatformPrefab => _platformPrefab;
     }
 }
