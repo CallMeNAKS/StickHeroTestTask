@@ -5,15 +5,15 @@ namespace CodeBase.Platform
 {
     public class PlatformBuilder
     {
-        private Transform _currentPlatformTransform;
+        private Platform _currentPlatform;
         private readonly GenericSource<Platform> _platformSource;
         private readonly PlatformConfig _platformConfig;
 
-        public PlatformBuilder(Transform currentPlatformTransform,
+        public PlatformBuilder(Platform currentPlatform,
             GenericSource<Platform> platformSource,
             PlatformConfig platformConfig)
         {
-            _currentPlatformTransform = currentPlatformTransform;
+            _currentPlatform = currentPlatform;
             _platformSource = platformSource;
             _platformConfig = platformConfig;
         }
@@ -25,22 +25,28 @@ namespace CodeBase.Platform
             var placeForPlatform = CalculatePlatformPosition(size, range);
 
             var newPlatform = CreatePlatform(placeForPlatform, size);
-            
-            _currentPlatformTransform = newPlatform.transform;
+
+            _currentPlatform = newPlatform;
         }
 
         private Vector3 CalculatePlatformPosition(float platformSize, float range)
         {
-            var currentPlatformWidth = _currentPlatformTransform.localScale.x;
-            return _currentPlatformTransform.position + 
-                   new Vector3(currentPlatformWidth / 2 + range + platformSize / 2, 0, 0);
+            var currentSpriteRenderer = _currentPlatform.SpriteRenderer;
+
+            float currentPlatformRightEdge = currentSpriteRenderer.bounds.max.x;
+            float newPlatformLeftEdge = currentPlatformRightEdge + range;
+            float newPlatformCenterX = newPlatformLeftEdge + platformSize / 2;
+
+            return new Vector3(newPlatformCenterX, _currentPlatform.transform.position.y,
+                _currentPlatform.transform.position.z);
         }
+
 
         private Platform CreatePlatform(Vector3 position, float platformSize)
         {
             var newPlatform = _platformSource.Get();
             newPlatform.transform.position = position;
-            newPlatform.PlatformTransform.localScale = 
+            newPlatform.PlatformTransform.localScale =
                 new Vector2(platformSize, newPlatform.PlatformTransform.localScale.y);
             return newPlatform;
         }

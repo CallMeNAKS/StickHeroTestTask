@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minSize: 0.9
   _maxSize: 1.8
-  _minRange: 2
-  _maxRange: 4.5
-  _platformPrefab: {fileID: 2688123194185348162, guid: f186fdf3f3b9f944abb5701664ca0355, type: 3}
+  _minRange: 1
+  _maxRange: 3.5
