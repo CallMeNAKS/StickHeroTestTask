@@ -7,10 +7,8 @@ namespace CodeBase.Character
     {
         [SerializeField] private float _characterSpeed = 2f;
         [SerializeField] private float _fallAnimationDuration = 1f;
-        [SerializeField] private Character _characterPrefab;
         
         public float CharacterSpeed => _characterSpeed;
         public float FallAnimationDuration => _fallAnimationDuration;
-        public Character CharacterPrefab => _characterPrefab;
     }
 }
