@@ -1,9 +1,8 @@
-﻿namespace CodeBase.Infrastructure.StateMachine.GameState
+﻿using System;
+
+namespace CodeBase.Infrastructure.StateMachine.GameState
 {
-    public interface IGameState
+    public interface IGameState : IState
     {
-        public void Enter();
-        public void Update();
-        public void Exit();
     }
 }
