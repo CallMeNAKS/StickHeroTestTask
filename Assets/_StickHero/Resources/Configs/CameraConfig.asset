@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cee3e8405b0490ebd0b23b4d06eeddb, type: 3}
   m_Name: CameraConfig
   m_EditorClassIdentifier: 
+  _moveDuration: 2
+  _cameraSize: 5
+  _cameraReSizeDuration: 1
