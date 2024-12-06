@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace CodeBase.Bridge
 {
@@ -7,12 +8,10 @@ namespace CodeBase.Bridge
     { 
         [SerializeField] private float _buildSpeed = 1.5f;
         [SerializeField] private float _maxHeight = 15f;
-        [SerializeField] private float _fallSpeed = 1f;
-        [SerializeField] private Bridge _bridgePrefab;
+        [SerializeField] private float _fallDuration = 0.5f;
         
         public float BuildSpeed => _buildSpeed;
         public float MaxHeight => _maxHeight;
-        public float FallSpeed => _fallSpeed;
-        public Bridge BridgePrefab => _bridgePrefab;
+        public float FallDuration => _fallDuration;
     }
 }

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad85fcf81f4b42098dc30a708bde24a4, type: 3}
   m_Name: BridgeConfig
   m_EditorClassIdentifier: 
-  _buildSpeed: 12
-  _maxHeight: 50
-  _fallSpeed: 1
-  _bridgePrefab: {fileID: -452803013140988608, guid: 0bcfe6986e8d5da4c950bd8df795beab, type: 3}
+  _buildSpeed: 48
+  _maxHeight: 40
+  _fallDuration: 0.5
