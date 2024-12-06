@@ -8,6 +8,9 @@ namespace CodeBase.Platform
         [SerializeField] private SpriteRenderer _spriteRenderer;
 
         public Transform PlatformTransform => _platformTransform;
-        public SpriteRenderer SpriteRenderer => _spriteRenderer;
+        // public Bounds PlatformBounds => _spriteRenderer.bounds; //TODO длинее обращение к конкретной точке
+        public float MaxX => _spriteRenderer.bounds.max.x;
+        public float MinX => _spriteRenderer.bounds.min.x;
+        public float MaxY => _spriteRenderer.bounds.max.y;
     }
 }
